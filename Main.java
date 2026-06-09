@@ -29,6 +29,10 @@ public class Main {
 
                 displayStudents();
 
+            } else if (choice == 3) {
+
+                searchStudent(input);
+
             }
 
         }
@@ -74,6 +78,30 @@ public class Main {
             System.out.println("Marks : " + s.getMarks());
 
         }
+
+    }
+
+    public static void searchStudent(Scanner input) {
+
+        System.out.print("Enter Student ID : ");
+
+        int id = input.nextInt();
+
+        for (Student s : students) {
+
+            if (s.getStudentId() == id) {
+
+                System.out.println("ID : " + s.getStudentId());
+                System.out.println("Name : " + s.getStudentName());
+                System.out.println("Marks : " + s.getMarks());
+
+                return;
+
+            }
+
+        }
+
+        System.out.println("Student Not Found");
 
     }
 
