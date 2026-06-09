@@ -33,6 +33,18 @@ public class Main {
 
                 searchStudent(input);
 
+            } else if (choice == 4) {
+
+                averageMarks();
+
+            } else if (choice == 5) {
+
+                System.exit(0);
+
+            } else {
+
+                System.out.println("Invalid Choice");
+
             }
 
         }
@@ -102,6 +114,30 @@ public class Main {
         }
 
         System.out.println("Student Not Found");
+
+    }
+
+    public static void averageMarks() {
+
+        if (students.isEmpty()) {
+
+            System.out.println("No Students");
+
+            return;
+
+        }
+
+        double total = 0;
+
+        for (Student s : students) {
+
+            total += s.getMarks();
+
+        }
+
+        double average = total / students.size();
+
+        System.out.println("Average Marks = " + average);
 
     }
 
