@@ -11,5 +11,15 @@ public class Student {
         this.marks = marks;
 
     }
+public int getStudentId() {
+    return studentId;
+}
 
+public String getStudentName() {
+    return studentName;
+}
+
+public double getMarks() {
+    return marks;
+}
 }
