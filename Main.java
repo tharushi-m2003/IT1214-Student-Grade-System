@@ -20,37 +20,61 @@ public class Main {
 
             System.out.print("Enter Choice : ");
             int choice = input.nextInt();
-			
-			if(choice==1){
-				addStudent(input);
-			}
+
+            if (choice == 1) {
+
+                addStudent(input);
+
+            } else if (choice == 2) {
+
+                displayStudents();
+
+            }
+
         }
 
     }
-	public static void addStudent(Scanner input) {
 
-    System.out.print("Enter Student ID : ");
-    int id = input.nextInt();
+    public static void addStudent(Scanner input) {
 
-    input.nextLine();
+        System.out.print("Enter Student ID : ");
+        int id = input.nextInt();
 
-    System.out.print("Enter Student Name : ");
-    String name = input.nextLine();
+        input.nextLine();
 
-    System.out.print("Enter Marks : ");
-    double marks = input.nextDouble();
+        System.out.print("Enter Student Name : ");
+        String name = input.nextLine();
 
-    Student student = new Student(id, name, marks);
+        System.out.print("Enter Marks : ");
+        double marks = input.nextDouble();
 
-    students.add(student);
+        Student student = new Student(id, name, marks);
 
-    System.out.println("Student Added Successfully.");
+        students.add(student);
+
+        System.out.println("Student Added Successfully.");
+
+    }
+
+    public static void displayStudents() {
+
+        if (students.isEmpty()) {
+
+            System.out.println("No Students Found");
+
+            return;
+
+        }
+
+        for (Student s : students) {
+
+            System.out.println("------------------------");
+            System.out.println("ID : " + s.getStudentId());
+            System.out.println("Name : " + s.getStudentName());
+            System.out.println("Marks : " + s.getMarks());
+
+        }
+
+    }
 
 }
-
-}
-
-
-
-
-
