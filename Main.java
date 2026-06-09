@@ -19,11 +19,38 @@ public class Main {
             System.out.println("5. Exit");
 
             System.out.print("Enter Choice : ");
-
             int choice = input.nextInt();
-
+			
+			if(choice==1){
+				addStudent(input);
+			}
         }
 
     }
+	public static void addStudent(Scanner input) {
+
+    System.out.print("Enter Student ID : ");
+    int id = input.nextInt();
+
+    input.nextLine();
+
+    System.out.print("Enter Student Name : ");
+    String name = input.nextLine();
+
+    System.out.print("Enter Marks : ");
+    double marks = input.nextDouble();
+
+    Student student = new Student(id, name, marks);
+
+    students.add(student);
+
+    System.out.println("Student Added Successfully.");
 
 }
+
+}
+
+
+
+
+
